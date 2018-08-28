@@ -67,6 +67,9 @@ class Counter extends Component {
 }
 
 class Counter2 extends Component {
+  /* Debemos passar la variable props al constructor si queremos acceder a
+   * variables guardadas en props dentro del constructor.
+   **/
     constructor(props) {
         super(props);
         this.state = { count: this.props.initialCount };
@@ -85,6 +88,29 @@ Counter2.defaultProps = {
     initialCount: 100
 };
 
+class Multiply extends Component {
+  render() {
+    const {
+      arrayOfNumbers,
+      multiply,
+      title
+    } = this.props;
+    const mappedNumbers = arrayOfNumbers.map(multiply);
+
+    return (
+      <div>
+        <p>{title}{mappedNumbers.join(', ')}</p>
+      </div>
+    )
+  }
+}
+
+Multiply.defaultProps = {
+  arrayOfNumbers: [1, 2],
+  multiply: (number) => number * 3,
+  title: "Default multiplied numbers --> "
+}
+
 class App extends Component {
     render() {
         return (
@@ -97,15 +123,15 @@ class App extends Component {
                 <Advice />
                 <Person
                     person={{
+                        billing_address_city: "Tàrrega",
+                        billing_address_country: "España",
+                        billing_address_postalcode: "25300",
+                        billing_address_state: "Lleida",
+                        billing_address_street: "Calle falsa, 123",
+                        email: "perico.pendante@example.com",
                         first_name: "Perico",
                         last_name: "Pendante",
-                        billing_address_street: "Calle falsa, 123",
-                        billing_address_postalcode: "25300",
-                        billing_address_city: "Tàrrega",
-                        billing_address_state: "Lleida",
-                        billing_address_country: "España",
-                        phone_office: "973 97 39 73",
-                        email: "perico.pendante@example.com"
+                        phone_office: "973 97 39 73"
                     }}
                     showEmail
                 />
@@ -115,6 +141,12 @@ class App extends Component {
                 <p>
                     <Counter2 />
                 </p>
+                <Multiply
+                  arrayOfNumbers={[1, 2, 3, 4]}
+                  multiply={(number) => number * 3}
+                  title={<strong>Multiplied numbers: </strong>}
+                />
+                <Multiply arrayOfNumbers={[1, 3, 2]}/>
             </div>
         );
     }
