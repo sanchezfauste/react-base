@@ -4,6 +4,7 @@ import "./App.css";
 import ConditionalSection from './sections/conditional'
 import ListSection from './sections/list'
 import List2Section from './sections/list2'
+import Form from './sections/form'
 
 const Title = props => <h1>React base project</h1>;
 
@@ -114,45 +115,56 @@ Multiply.defaultProps = {
   title: "Default multiplied numbers --> "
 }
 
+// class App extends Component {
+//     render() {
+//         return (
+//             <div className="App">
+//                 <header className="App-header">
+//                     <img src={logo} className="App-logo" alt="logo" />
+//                     <Title />
+//                 </header>
+//                 <Description />
+//                 <Advice />
+//                 <Person
+//                     person={{
+//                         billing_address_city: "Tàrrega",
+//                         billing_address_country: "España",
+//                         billing_address_postalcode: "25300",
+//                         billing_address_state: "Lleida",
+//                         billing_address_street: "Calle falsa, 123",
+//                         email: "perico.pendante@example.com",
+//                         first_name: "Perico",
+//                         last_name: "Pendante",
+//                         phone_office: "973 97 39 73"
+//                     }}
+//                     showEmail
+//                 />
+//                 <p>
+//                     <Counter />
+//                 </p>
+//                 <p>
+//                     <Counter2 />
+//                 </p>
+//                 <Multiply
+//                   arrayOfNumbers={[1, 2, 3, 4]}
+//                   multiply={(number) => number * 3}
+//                   title={<strong>Multiplied numbers: </strong>}
+//                 />
+//                 <Multiply arrayOfNumbers={[1, 3, 2]}/>
+//                 <ConditionalSection />
+//                 <ListSection />
+//                 <List2Section />
+//                 <Form />
+//             </div>
+//         );
+//     }
+// }
+
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <Title />
-                </header>
-                <Description />
-                <Advice />
-                <Person
-                    person={{
-                        billing_address_city: "Tàrrega",
-                        billing_address_country: "España",
-                        billing_address_postalcode: "25300",
-                        billing_address_state: "Lleida",
-                        billing_address_street: "Calle falsa, 123",
-                        email: "perico.pendante@example.com",
-                        first_name: "Perico",
-                        last_name: "Pendante",
-                        phone_office: "973 97 39 73"
-                    }}
-                    showEmail
-                />
-                <p>
-                    <Counter />
-                </p>
-                <p>
-                    <Counter2 />
-                </p>
-                <Multiply
-                  arrayOfNumbers={[1, 2, 3, 4]}
-                  multiply={(number) => number * 3}
-                  title={<strong>Multiplied numbers: </strong>}
-                />
-                <Multiply arrayOfNumbers={[1, 3, 2]}/>
-                <ConditionalSection />
-                <ListSection />
-                <List2Section />
+                <Form />
             </div>
         );
     }
