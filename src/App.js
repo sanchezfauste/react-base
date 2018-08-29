@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import ConditionalSection from './sections/conditional'
 import ListSection from './sections/list'
+import List2Section from './sections/list2'
 
 const Title = props => <h1>React base project</h1>;
 
@@ -151,6 +152,7 @@ class App extends Component {
                 <Multiply arrayOfNumbers={[1, 3, 2]}/>
                 <ConditionalSection />
                 <ListSection />
+                <List2Section />
             </div>
         );
     }
